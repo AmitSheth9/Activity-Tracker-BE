@@ -13,5 +13,23 @@ module.exports = [
   },
   {
     activity: 'study'
-  }
+  },
+  {
+    activity: 'social media'
+  },
+  { 
+    activity: 'read'
+  },
+  { 
+    activity: 'watch tv'
+  },
+  { 
+    activity: 'eat meal'
+  },
+  { 
+    activity: 'leisure'
+  },
+  { 
+    activity: 'work on this app'
+  },
 ];

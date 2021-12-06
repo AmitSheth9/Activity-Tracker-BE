@@ -8,9 +8,9 @@ module.exports = class SeedData {
 
 
   static async loadUser() {
-    await pool.query('DELETE FROM usersx');
+    await pool.query('DELETE FROM users');
     await pool.query(`
-                INSERT INTO usersx (person, hash)
+                INSERT INTO users (person, hash)
                 VALUES ($1, $2)
                 RETURNING *;
                 `,
@@ -30,7 +30,8 @@ module.exports = class SeedData {
     }
   }
   static async loadActivityData() {
-    await pool.query('INSERT INTO activity_data (_name, activity_id, duration, hour, notes, day, user_id) VALUES ($1, $2, $3, $4, $5, $6, $7) Returning *', ['meditation', 12, 33, 1300, 'test', 990108, 6]);
+    await pool.query('DELETE FROM trackdata');
+    await pool.query('INSERT INTO trackdata (activity_name, activity_id, duration, hour, notes, date_, owner_id) VALUES ($1, $2, $3, $4, $5, $6, $7) Returning *', ['meditation', 1, 33, '12/5/2021, 1:32:23 PM', 'test', 990108, 1]);
     
   }
 };
